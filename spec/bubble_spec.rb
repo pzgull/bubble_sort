@@ -1,7 +1,11 @@
 require 'spec_helper'
+require './bubble.rb'
 
-RSpec.describe do
+array = (1..10).to_a.shuffle
+
+RSpec.describe Bubble do
     it 'works' do
-        expect(true).to be_truthy
+        bubble = Bubble.new(array)
+        expect(bubble.sort()).to match_array(array.sort)
     end
 end
